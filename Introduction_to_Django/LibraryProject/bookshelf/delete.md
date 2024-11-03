@@ -1,5 +1,6 @@
 # Deleting the book instance
 
+from bookshelf.models import Book
 python command:
 retrieved_book.delete()
 
