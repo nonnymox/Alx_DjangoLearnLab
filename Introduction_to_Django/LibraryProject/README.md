@@ -1,1 +1,2 @@
-Creating a Django Project
+Set up the Django file structure.
+
