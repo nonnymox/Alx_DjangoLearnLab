@@ -1,9 +1,9 @@
+from django.contrib.auth.decorators import user_passes_test
+from django.shortcuts import render, HttpResponse
 from .models import Book, Library
 from django.views.generic.detail import DetailView
-from django.contrib.auth.decorators import user_passes_test
 from django.contrib.auth import login
 from django.contrib.auth.forms import UserCreationForm
-from django.shortcuts import render, redirect, HttpResponse
 
 # Custom Registration View
 def register(request):
@@ -41,12 +41,12 @@ def is_member(user):
 # Role-based views
 @user_passes_test(is_admin, login_url='/login/')
 def admin_view(request):
-    return HttpResponse("Welcome, Admin!")
+    return render(request, 'relationship_app/admin_view.html')
 
 @user_passes_test(is_librarian, login_url='/login/')
 def librarian_view(request):
-    return HttpResponse("Welcome, Librarian!")
+    return render(request, 'relationship_app/librarian_view.html')
 
 @user_passes_test(is_member, login_url='/login/')
 def member_view(request):
-    return HttpResponse("Welcome, Member!")
+    return render(request, 'relationship_app/member_view.html')
