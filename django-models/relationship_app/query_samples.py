@@ -15,7 +15,7 @@ def get_books_in_library(library_name):
 # 3. Retrieve the librarian for a library
 def get_librarian_for_library(library_name):
     library = Library.objects.get(name=library_name)
-    librarian = library.librarian  # Use the related_name if you set one in the OneToOneField
+    librarian = Librarian.objects.get(library=library) # Use the related_name if you set one in the OneToOneField
     return librarian.name if librarian else "No librarian assigned"
 
 # Sample usage
