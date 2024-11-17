@@ -38,7 +38,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'bookshelf',
-    'relationship_app'
+    'relationship_app',
+    'advanced_features_and_security',
 ]
 
 MIDDLEWARE = [
@@ -126,4 +127,5 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 LOGIN_REDIRECT_URL = 'list_books'  # Adjust according to your desired redirect after login
 LOGOUT_REDIRECT_URL = 'login'      # Redirect to login page after logout
+AUTH_USER_MODEL = 'advanced_features_and_security.CustomUser'
 
