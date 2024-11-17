@@ -6,8 +6,8 @@ from django.contrib.auth.views import LoginView, LogoutView
 urlpatterns = [
     # Book management
     path('books/', list_books, name='list_books'),  # Function-based view
-    path('books/add/', views.add_book, name='add_book'),  # Add book
-    path('books/edit/<int:pk>/', views.edit_book, name='edit_book'),  # Edit book
+    path('books/add/', views.add_book, name='add_book/'),  # Add book
+    path('books/edit/<int:pk>/', views.edit_book, name='edit_book/'),  # Edit book
     path('books/delete/<int:pk>/', views.delete_book, name='delete_book'),  # Delete book
     
     # Library detail (class-based view)
