@@ -17,7 +17,7 @@ def register(request):
             return redirect('profile')
     else:
         form = CustomUserCreationForm()
-    return render(request, 'registration/register.html', {'form': form})
+    return render(request, 'blog/register.html', {'form': form})
 
 # Login View
 def login_view(request):
@@ -29,7 +29,7 @@ def login_view(request):
             return redirect('profile')
     else:
         form = AuthenticationForm()
-    return render(request, 'registration/login.html', {'form': form})
+    return render(request, 'blog/login.html', {'form': form})
 
 # Logout View
 def logout_view(request):
@@ -38,7 +38,7 @@ def logout_view(request):
 
 # Profile View
 def profile(request):
-    return render(request, 'profile.html')
+    return render(request, 'blog/profile.html')
 
 def edit_profile(request):
     if request.method == 'POST':
@@ -48,4 +48,7 @@ def edit_profile(request):
             return redirect('profile')
     else:
         form = UserProfileForm(instance=request.user)
-    return render(request, 'profile_edit.html', {'form': form})
+    return render(request, 'blog/profile_edit.html', {'form': form})
+
+def home(request):
+    return render(request, 'blog/home.html')
