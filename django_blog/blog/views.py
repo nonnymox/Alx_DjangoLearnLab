@@ -5,7 +5,7 @@ from django.contrib.auth.forms import AuthenticationForm
 from django.urls import reverse, reverse_lazy
 from django.views.generic import ListView, DetailView, CreateView, UpdateView, DeleteView
 from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
-from . import models
+from blog import models
 from django_blog.blog.models import Post
 from .forms import CustomUserCreationForm, UserProfileForm
 from django.contrib.auth.models import User
