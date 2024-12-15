@@ -9,6 +9,8 @@ from blog import models
 from django_blog.blog.models import Post
 from .forms import CustomUserCreationForm, UserProfileForm
 from django.contrib.auth.models import User
+from django.contrib.auth.decorators import login_required
+
 
 # Register View
 def register(request):
@@ -26,6 +28,7 @@ def register(request):
     return render(request, 'blog/register.html', {'form': form})
 
 # Login View
+@login_required
 def login_view(request):
     if request.method == 'POST':
         form = AuthenticationForm(request, data=request.POST)
